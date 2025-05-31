@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { PropsWithChildren } from 'react';
+import { Vibration } from 'react-native';
 import {
   ImageSourcePropType,
   StyleSheet,
@@ -21,9 +22,10 @@ type DiceProps = PropsWithChildren<{
   imageUrl : ImageSourcePropType
 }>
 
+
 const Dice = ({imageUrl}: DiceProps):JSX.Element =>{
   return(
-    <View>
+    <View style={styles.diceContainer}>
       <Image style={styles.diceImage} source={imageUrl} />
     </View>
   )
@@ -60,6 +62,8 @@ function App(): React.JSX.Element {
         setDiceImage(DiceOne);
         break;
     }
+
+    Vibration.vibrate(50);
   };
 
   return (
