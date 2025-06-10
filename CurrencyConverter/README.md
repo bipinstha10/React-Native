@@ -1,0 +1,1 @@
+Here we are using FlatList instead of ScrollView as it provides performance benefits by rendering only the items that are visible on the screen.
